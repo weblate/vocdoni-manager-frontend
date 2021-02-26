@@ -69,7 +69,7 @@ class MainApp extends App<Props, State> {
     state: State = {
         isConnected: false,
         loadingEntityMetadata: false,
-        title: " ",
+        title: 'Vocdoni',
         menuVisible: true,
         menuSelected: "profile",
         menuCollapsed: false,
@@ -182,6 +182,10 @@ class MainApp extends App<Props, State> {
 
     async getEntityMetadata(id: string) : Promise<EntityMetadata> {
         return EntityApi.getMetadata(id, await getGatewayClients())
+    }
+
+    get isEntityLoaded () : boolean {
+        return this.state.address?.length > 0 && this.state.entity?.name?.default?.length > 0
     }
 
     get isReadOnlyNetwork() : boolean {
@@ -386,6 +390,7 @@ class MainApp extends App<Props, State> {
         const injectedGlobalContext: IAppContext = {
             gatewayClients: getGatewayClients(),
             getEntityMetadata: this.getEntityMetadata.bind(this),
+            isEntityLoaded: this.isEntityLoaded,
             isWriteEnabled: isWriteEnabled(),
             isReadOnly: this.isReadOnly,
             isReadOnlyNetwork: this.isReadOnlyNetwork,

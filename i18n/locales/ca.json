@@ -67,6 +67,13 @@
     },
     "btn": {
         "ok": "D'acord",
-        "cancel": "Cancel·la"
+        "cancel": "Cancel·la",
+        "new_organization": "Crea nova organització",
+        "recover_account": "Recupera un compte",
+        "switch_account": "Canvia de compte",
+        "login": "Inicia sessió"
+    },
+    "title": {
+        "select_account": "Seleccionar compte"
     }
 }

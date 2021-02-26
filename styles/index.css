@@ -81,6 +81,14 @@ body {
     @apply mr-3;
 }
 
+.account-selection ul {
+    @apply mt-8;
+}
+
+.account-selection ul li {
+    @apply mb-3;
+}
+
 /* note that most of these styles were imported from old css, instead than porting them to proper tailwing styling */
 .card-list {
     margin-top: 2em;

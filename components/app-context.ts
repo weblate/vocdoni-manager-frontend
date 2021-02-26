@@ -22,6 +22,7 @@ export type ISelected = 'profile'
 export interface IAppContext {
     getEntityMetadata: (id: string) => Promise<EntityMetadata>
     gatewayClients: Promise<GatewayPool>,
+    isEntityLoaded: boolean,
     isWriteEnabled: boolean,
     isReadOnly: boolean,
     isReadOnlyNetwork: boolean,

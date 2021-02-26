@@ -67,6 +67,13 @@
     },
     "btn": {
         "ok": "Ok",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "new_organization": "Create new organization",
+        "recover_account": "Recover account",
+        "switch_account": "Switch account",
+        "login": "Log in"
+    },
+    "title": {
+        "select_account": "Select account"
     }
 }

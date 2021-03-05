@@ -85,15 +85,7 @@ class AccountNew extends Component<IAppContext, State> {
     }
 
     onConfirmBackup = async () => {
-        this.setState({ accountConfirmedBackup: true, accountWaitingForGas: true })
-        try {
-            await this.props.web3Wallet.waitForGas()
-        } catch (e) {
-            //message.error({ content: 'Timeout waiting for user to get gas. Please, try it again' })
-            this.setState({ creatingAccount: false })
-            return false
-        }
-        this.setState({ accountWaitingForGas: false })
+        this.setState({ accountConfirmedBackup: true, accountWaitingForGas: false })
         Router.push("/entities/new")
     }
 
@@ -210,17 +202,6 @@ class AccountNew extends Component<IAppContext, State> {
                             I have copied my Entity details
                         </Button>
                     </div>
-                </>
-                        }
-
-                        {this.state.accountWaitingForGas &&
-                <>
-                    {/* <h3>Activate your account</h3> */}
-                    <span>
-                        {/* To continue with the transaction you need to get some xDAI tokens. <br /> */}
-                        To activate your account we need you to send us the name of your Entity and this identifier: <code>{this.state.address}</code> to <a href="mailto:info@vocdoni.io">info@vocdoni.io</a><br /></span>
-                    <br />
-                    {/* <Spin indicator={<LoadingOutlined style={{ fontSize: 22 }} />} /> */}
                 </>
                         }
 
